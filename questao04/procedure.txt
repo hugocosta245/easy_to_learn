@@ -1,0 +1,57 @@
+CREATE PROCEDURE new_proccess (
+
+  IN codflow VARCHAR(10),
+
+  IN proccess varchar(25),
+
+  IN description text(60))
+
+
+
+BEGIN
+declare varcodflow int(10);
+declare varproccess varchar(25) ;
+declare vardescription text(60);
+declare counter int ;
+
+set counter = 0;
+while counter <= 15 do
+    set varproccess = concat(substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1)
+            ) ;  
+
+			
+     set varcodflow = floor(1 + (rand() * 99));
+    
+	 set vardescription = concat(substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1),
+                  substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ ', rand()*28, 1)
+            ) ;  	 
+	 
+	 
+	 
+    insert into proccess (codflow,proccess,description) 
+    values (varcodflow,varproccess,vardescription);
+    set counter = counter + 1;
+    end while;
+End

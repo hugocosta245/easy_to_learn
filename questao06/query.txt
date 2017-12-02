@@ -1,0 +1,20 @@
+SELECT
+  contato.sobrenome AS sobrenome, ,
+  correspondencia.datahora AS correspondencia ,
+  contato_empresa.contato AS contato,
+  empresa.nome AS empresa
+ 
+FROM contato
+INNER JOIN contato ON (
+  contato.id = correspondencia.contato_id
+)
+INNER JOIN correspondencia   ON (
+  JOIN correspondencia.id = contato_empresa.empresa_id)
+)
+INNER JOIN Contato_Empresa ON (
+  contato_empresa.empresa_id = empresa.id
+)
+INNER JOIN empresa ON (
+  empresa.id = contato_empresa.empresa_id 
+)
+WHERE contato.sobrenome = 'Silva'

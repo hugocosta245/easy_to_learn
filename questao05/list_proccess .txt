@@ -1,0 +1,15 @@
+CREATE PROCEDURE list_proccess  (
+
+  IN codflow VARCHAR(10),
+
+  IN proccess varchar(25),
+
+  IN description text(60))
+
+
+
+BEGIN
+
+SELECT * FROM proccess
+
+End
